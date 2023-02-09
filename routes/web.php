@@ -2,17 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use ProtoneMedia\Splade\Facades\SEO;
 
 Route::middleware('splade')->group(function () {
     // Registers routes to support password confirmation in Form and Link components...
@@ -25,6 +15,9 @@ Route::middleware('splade')->group(function () {
     Route::spladeUploads();
 
     Route::get('/', function () {
+        // SEO::title('Laravel Splade')
+        //     ->description('Spade SPA with laravel')
+        //     ->keywords('laravel,splade,course');
         return view('welcome');
     });
 
@@ -38,5 +31,5 @@ Route::middleware('splade')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    require __DIR__.'/auth.php';
+    require __DIR__ . '/auth.php';
 });

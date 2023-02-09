@@ -4,7 +4,7 @@
             @auth
                 <Link href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</Link>
             @else
-                <Link href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</Link>
+                <Link confirm href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</Link>
 
                 @if (Route::has('register'))
                     <Link href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
