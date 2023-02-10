@@ -1,10 +1,9 @@
 <?php
 
-use ProtoneMedia\Splade\Facades\SEO;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use ProtoneMedia\Splade\Facades\SEO;
 
 Route::middleware('splade')->group(function () {
     // Registers routes to support password confirmation in Form and Link components...
@@ -33,8 +32,8 @@ Route::middleware('splade')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories',CategoryController::class);
     Route::resource('posts', PostController::class);
-
+    
     require __DIR__ . '/auth.php';
 });

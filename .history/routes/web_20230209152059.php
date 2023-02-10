@@ -33,8 +33,8 @@ Route::middleware('splade')->group(function () {
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
 
-    Route::resource('categories', CategoryController::class);
+    Route::resource('categories',CategoryController::class);
     Route::resource('posts', PostController::class);
-
+    
     require __DIR__ . '/auth.php';
 });
