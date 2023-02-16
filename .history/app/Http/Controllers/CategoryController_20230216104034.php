@@ -10,16 +10,15 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::class;
+        $categories = Category::all();
 
         // return view('categories.index',compact('categories'));
 
         return view('categories.index', [
             'categories' => SpladeTable::for($categories)
-                ->column('name', sortable: true,)
-                ->column('slug', label: 'Description', searchable: true)
-                ->withGlobalSearch(columns: ['name', 'slug'])
-                ->paginate(6),
+                ->column('name')
+                ->column('slug')
+                ->paginate(15),
         ]);
     }
 }

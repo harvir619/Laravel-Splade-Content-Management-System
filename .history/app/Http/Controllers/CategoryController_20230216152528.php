@@ -16,9 +16,8 @@ class CategoryController extends Controller
 
         return view('categories.index', [
             'categories' => SpladeTable::for($categories)
-                ->column('name', sortable: true,)
-                ->column('slug', label: 'Description', searchable: true)
-                ->withGlobalSearch(columns: ['name', 'slug'])
+                ->column('name',sortable:true,)
+                ->column('slug',label:'')
                 ->paginate(6),
         ]);
     }

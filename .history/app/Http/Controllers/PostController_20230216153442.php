@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\SpladeTable;
 
-class CategoryController extends Controller
+class PostController extends Controller
 {
     public function index()
     {
-        $categories = Category::class;
+        $posts = Post::class;
 
         // return view('categories.index',compact('categories'));
 
-        return view('categories.index', [
-            'categories' => SpladeTable::for($categories)
-                ->column('name', sortable: true,)
+        return view('posts.index', [
+            'posts' => SpladeTable::for($posts)
+                ->column('title', sortable: true,)
                 ->column('slug', label: 'Description', searchable: true)
-                ->withGlobalSearch(columns: ['name', 'slug'])
+                ->withGlobalSearch(columns: ['title', 'slug'])
                 ->paginate(6),
         ]);
     }
