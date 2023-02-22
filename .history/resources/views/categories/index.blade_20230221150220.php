@@ -5,7 +5,7 @@
                 {{ __('Categories') }}
             </h2>
             <Link href="{{ route('categories.create') }}"
-            class='px-4 py-2 bg-indigo-400 hover:bg-indigo-600 text-white rounded-md'
+            class="px-4 py-2 bg-indigo-400 hover:bg-indigo-600 text-white rounded-md"
             style="background-color: rgb(129 140 248);">
             New Category
             </Link>
