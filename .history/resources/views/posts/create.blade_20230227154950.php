@@ -14,7 +14,7 @@
 
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <x-splade-form :action="route('posts.store')" class="max-w-md mx-auto p-4 bg-white rounded-md">
+            <x-splade-form :action="route('categories.store')" class="max-w-md mx-auto p-4 bg-white rounded-md">
                 <x-splade-input name="name" label="Title"></x-splade-input>
                 <x-splade-input name="slug" label="Description"></x-splade-input>
                 <x-splade-submit class="mt-4" />
