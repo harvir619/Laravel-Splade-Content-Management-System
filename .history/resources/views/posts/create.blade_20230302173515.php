@@ -15,10 +15,9 @@
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-splade-form :action="route('posts.store')" class="max-w-md mx-auto p-4 bg-white rounded-md">
-                <x-splade-select name="category_id" label="Category" :options="$categories"></x-splade-select>
                 <x-splade-input name="title" label="Title"></x-splade-input>
-                <x-splade-input name="slug" label="Slug" autosize></x-splade-input>
-                <x-splade-textarea name="description" label="Description"></x-splade-area>
+                <x-splade-input name="description" label="Description"></x-splade-input>
+                <x-splade-input name="slug" label="Slug"></x-splade-input>
                 <x-splade-submit class="mt-4" />
             </x-splade-form>
     

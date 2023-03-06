@@ -50,7 +50,7 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::pluck('name', 'id')->toArray();
-        return view('posts.create', compact('categories'));
+        return view('posts.create');
     }
 
     public function store(PostStoreRequest $request)
