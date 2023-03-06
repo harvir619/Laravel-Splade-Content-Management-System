@@ -74,14 +74,6 @@ class PostController extends Controller
         $post->update($request->validated());
         Toast::title('Post Updated Succesfully');
 
-        return redirect()->route('posts.index');
-    }
-
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        Toast::success('Post Deleted Succesfully');
-
-        return redirect()->back();
+        return redirect()->route('$post.index');
     }
 }

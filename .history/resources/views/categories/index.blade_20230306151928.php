@@ -25,10 +25,8 @@
                         confirm-text="Are you sure?"
                         confirm-button="Yes"
                         cancel-button="Cancel"
-                        href="{{ route('categories.destroy',$category->id) }}"
-                        class="text-red-600 hover:text-red-400 font-semibold"
-                        method="DELETE"
-                        preserve-scroll>
+                        href="{{ route('categories.destroy') }}"
+                        class="text-red-600 hover:text-red-400 font-semibold">
                         Delete
                         </Link>
                             @endcell

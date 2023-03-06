@@ -38,6 +38,9 @@ class CategoryController extends Controller
     }
     public function edit(Category $category)
     {
+        dd(
+            $category
+        );
         return view('categories.edit', compact('category'));
     }
 
@@ -48,13 +51,5 @@ class CategoryController extends Controller
         Toast::title('Category Updated Succesfully');
 
         return redirect()->route('categories.index');
-    }
-
-    public function destroy(Category $category)
-    {
-        $category->delete();
-        Toast::success('Category Deleted Succesfully');
-
-        return redirect()->back();
     }
 }

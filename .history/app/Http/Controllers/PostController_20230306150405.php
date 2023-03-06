@@ -76,12 +76,4 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
-
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        Toast::success('Post Deleted Succesfully');
-
-        return redirect()->back();
-    }
 }

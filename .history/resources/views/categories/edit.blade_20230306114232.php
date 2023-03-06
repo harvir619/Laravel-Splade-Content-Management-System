@@ -2,12 +2,12 @@
     <x-slot name="header">
         <div class="flex justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('New Categories') }}
+                {{ __('Edit Categories') }}
             </h2>
             <Link href="{{ route('categories.create') }}"
                 class='px-4 py-2 bg-indigo-400 hover:bg-indigo-600 text-white rounded-md'
                 style="background-color: rgb(129 140 248);">
-            New Category
+            Edit Category
             </Link>
         </div>
     </x-slot>

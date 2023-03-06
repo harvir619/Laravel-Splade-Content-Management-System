@@ -20,15 +20,8 @@
                     @cell('action',$category)
                         <Link href="{{ route('categories.edit',$category->id) }}"
                             class="text-green-600 hover:text-green-400 font-semibold">Edit</Link>
-                        <Link
-                        confirm="Delete Category"
-                        confirm-text="Are you sure?"
-                        confirm-button="Yes"
-                        cancel-button="Cancel"
-                        href="{{ route('categories.destroy',$category->id) }}"
-                        class="text-red-600 hover:text-red-400 font-semibold"
-                        method="DELETE"
-                        preserve-scroll>
+                        <Link confirm="Enter the danger zone..." confirm-text="Are you sure?" confirm-button="Yes, take me there!"
+                            cancel-button="No, keep me save!" href="/danger">
                         Delete
                         </Link>
                             @endcell

@@ -60,28 +60,4 @@ class PostController extends Controller
         Toast::title('Post has been created');
         return redirect()->route('posts.index');
     }
-
-
-    public function edit(Post $post)
-    {
-        $categories = Category::pluck('name', 'id')->toArray();
-        return view('posts.edit', compact('post', 'categories'));
-    }
-
-    public function update(PostStoreRequest $request, Post $post)
-    {
-
-        $post->update($request->validated());
-        Toast::title('Post Updated Succesfully');
-
-        return redirect()->route('posts.index');
-    }
-
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        Toast::success('Post Deleted Succesfully');
-
-        return redirect()->back();
-    }
 }

@@ -40,21 +40,8 @@ class CategoryController extends Controller
     {
         return view('categories.edit', compact('category'));
     }
-
-    public function update(CategoryStoreRequest $request, Category $category)
-    {
-
-        $category->update($request->validated());
-        Toast::title('Category Updated Succesfully');
-
-        return redirect()->route('categories.index');
-    }
-
-    public function destroy(Category $category)
-    {
-        $category->delete();
-        Toast::success('Category Deleted Succesfully');
-
-        return redirect()->back();
+    
+    public function update(CategoryStoreRequest $request, Category $category){
+        $category->update
     }
 }

@@ -36,25 +36,4 @@ class CategoryController extends Controller
         Toast::title('Category has been created');
         return redirect()->route('categories.index');
     }
-    public function edit(Category $category)
-    {
-        return view('categories.edit', compact('category'));
-    }
-
-    public function update(CategoryStoreRequest $request, Category $category)
-    {
-
-        $category->update($request->validated());
-        Toast::title('Category Updated Succesfully');
-
-        return redirect()->route('categories.index');
-    }
-
-    public function destroy(Category $category)
-    {
-        $category->delete();
-        Toast::success('Category Deleted Succesfully');
-
-        return redirect()->back();
-    }
 }

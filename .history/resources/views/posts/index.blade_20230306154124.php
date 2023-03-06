@@ -20,7 +20,7 @@
                     @cell('action',$post)
                     <Link href="{{ route('posts.edit',$post->id) }}" class="text-green-600 hover:text-green-400 font-semibold">Edit</Link>
                     <Link confirm="Delete Post" confirm-text="Are you sure?" confirm-button="Yes" cancel-button="Cancel"
-                                                href="{{ route('posts.destroy',$post->id) }}" class="text-red-600 hover:text-red-400 font-semibold"
+                                                href="{{ route('posts.destroy',$category->id) }}" class="text-red-600 hover:text-red-400 font-semibold"
                                                 method="DELETE" preserve-scroll>
                                             Delete
                                             </Link>

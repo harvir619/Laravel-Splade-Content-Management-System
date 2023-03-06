@@ -55,6 +55,6 @@ class CategoryController extends Controller
         $category->delete();
         Toast::success('Category Deleted Succesfully');
 
-        return redirect()->back();
+        return redirect()->route('categories.index');
     }
 }
