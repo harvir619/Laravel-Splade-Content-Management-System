@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Tables\Categories;
 use Illuminate\Http\Request;
 use ProtoneMedia\Splade\SpladeTable;
 use ProtoneMedia\Splade\Facades\Toast;
@@ -18,8 +17,13 @@ class CategoryController extends Controller
         // return view('categories.index',compact('categories'));
 
         return view('categories.index', [
-            // 'categories' => SpladeTable::for($categories)
-            'categories' => Categories::class,
+            'categories' => SpladeTable::for($categories)
+                ->column('name', sortable: true,)
+                ->column('slug', label: 'Description', searchable: true)
+                ->column('action')
+                ->export()
+                ->withGlobalSearch(columns: ['name', 'slug'])
+                ->paginate(6),
         ]);
     }
 

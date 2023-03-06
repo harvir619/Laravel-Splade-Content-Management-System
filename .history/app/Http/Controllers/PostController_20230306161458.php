@@ -17,10 +17,30 @@ class PostController extends Controller
 {
     public function index()
     {
+        $globalSearch = AllowedFilter::callback('global', function ($query, $value) {
+            $query->where(function ($query) use ($value) {
+                Collection::wrap($value)->each(function ($value) use ($query) {
+                    $query
+                        ->orWhere('title', 'LIKE', "%{$value}%")
+                        ->orWhere('slug', 'LIKE', "%{$value}%");
+                });
+            });
+        });
+
+        $posts = QueryBuilder::for(Post::class)
+            ->defaultSort('title')
+            ->allowedSorts(['title', 'slug'])
+            ->allowedFilters(['title', 'slug', 'category_id', $globalSearch]);
+
+        $categories = Category::pluck('name', 'id')->toArray();
         return view(
             'posts.index',
             [
                 // 'posts' => SpladeTable::for($posts)
+
+                //     ->withGlobalSearch(columns: ['title', 'slug'])
+                //     ->selectFilter('category_id', $categories)
+                //     ->paginate(8),
                 'posts' => Posts::class,
             ]
         );

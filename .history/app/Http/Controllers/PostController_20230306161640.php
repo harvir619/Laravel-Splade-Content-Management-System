@@ -17,10 +17,15 @@ class PostController extends Controller
 {
     public function index()
     {
+
+
+        $categories = Category::pluck('name', 'id')->toArray();
         return view(
             'posts.index',
             [
                 // 'posts' => SpladeTable::for($posts)
+
+
                 'posts' => Posts::class,
             ]
         );
