@@ -15,10 +15,10 @@
 
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-        <img src="https://cdn0.iconfinder.com/data/icons/network-and-communication-1-8/66/83-512.png"
-            alt=""
-            height="400"
-            width="400"/>
+<img src="https://cdn0.iconfinder.com/data/icons/network-and-communication-1-8/66/83-512.png"
+    alt=""
+    height="400"
+    width="400">
         </div>
 
         {{-- <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
