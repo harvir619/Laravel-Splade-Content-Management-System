@@ -29,7 +29,7 @@
                         class="text-red-600 hover:text-red-400 font-semibold"
                         method="DELETE"
                         preserve-scroll>
-                        🗑️
+                        Delete
                         </Link>
                             @endcell
                     </x-splade-table>
